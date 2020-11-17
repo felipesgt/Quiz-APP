@@ -2,18 +2,21 @@ import {shuffleArray} from '../utils/utils';
 
 export type Question = {
   category: string;
-  correct_anwser: string;
+  correct_answer: string;
   difficulty: string;
-  incorrect_anwser : string[];
+  incorrect_answers: string[];
   question: string;
   type: string;
-}
-export type  QuestionState = Question & { anwsers: string[] }
-export enum dificulty {
+};
+
+
+export enum Difficulty {
   EASY = "easy",
-  MEDIUM= "medium",
-  HARD = "hard"
+  MEDIUM = "medium",
+  HARD = "hard",
 }
+
+export type QuestionsState = Question & { answers: string[] };
 
 export const api = async (amount: number, difficulty: Difficulty): Promise<QuestionsState[]> => {
   const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
