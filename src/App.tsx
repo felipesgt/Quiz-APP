@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { api } from './services/api';
+
 import Card from './components/Card';
 const TOTAL_QUESTIONS = 10;
 
@@ -26,14 +28,13 @@ const App = () => {
       </button>
       <p className="score">Score:</p>
       <p>Loading Question ...</p>
-      <Card questionNr={number + 1} 
+     {/* <Card questionNr={number + 1} 
       totalQuestion={TOTAL_QUESTIONS} 
       question={questions[number].question}
       answers={questions[number].anwsers}
       userAnswer={userAnwsers ? userAnwsers[number] : undefined }
       callback={checkAnwser}
-
-      />
+  />*/}
       <button className="next" onClick={NextQuestion}>
           Next
       </button>
